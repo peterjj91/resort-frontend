@@ -1,0 +1,102 @@
+.style
+	margin-top 100px
+	margin-bottom 100px
+	&__header
+		margin-bottom 50px
+	&__wrapper
+		& + &
+			margin-top 100px
+	&__title
+		color #1c2e36
+		font-size 16px
+		font-weight 700
+		line-height 19px
+		text-transform uppercase
+		border-bottom 2px solid #1c2e36
+		padding-bottom 10px
+		margin-bottom 40px
+	&__info
+		color #1c2e36
+		font-size 14px
+		line-height 16px
+		display inline-block
+		& + &
+			margin-left 30px
+	&__caption
+		color #a4b3b7
+		font-size 14px
+		font-weight 700
+		line-height 16px
+		// margin-bottom 0
+	
+	&__show-grid
+		color #a4b3b7
+		font-size 16px
+		font-weight 700
+		line-height 19px
+		& + &
+			margin-top 40px
+		[class^='col-']
+			min-height 60px
+			background-color #e6edef
+			background-clip content-box
+
+.style-color
+	padding-top 100%
+	position relative
+	display flex
+	flex-direction column
+	justify-content flex-end
+	&__additional
+		width 100%
+		position absolute
+		bottom 0
+		left 0
+	&__black,
+	&__white
+		.row &.row
+			margin-left 0
+			margin-right 0
+	&__sub
+		padding-top 20%
+		padding-left 0 !important
+		padding-right 0 !important
+		for i in (1..5)
+			num = (6 - i)
+			&:nth-child({num})
+				.style-color__black &
+					background-color alpha(#000, i/10)
+				.style-color__white &
+					background-color alpha(#fff, i/10)
+
+.style-typo
+	border none
+	&__desc
+		@extend .style__caption
+		min-width 150px
+		text-align right
+		padding-left 0
+		@media mobile
+			text-align left
+		
+	tr
+		@media mobile
+			display block
+			& + tr
+				margin-top 30px
+		&:hover td
+			background-color transparent
+	td
+		border none
+		vertical-align middle
+		padding-bottom 20px
+		padding-top 20px
+		@media mobile
+			display block
+			padding 5px 0
+
+	h1, h2, h3, h4, h5, p
+		margin-top 0
+		margin-bottom 0
+	ul
+		margin-top 0

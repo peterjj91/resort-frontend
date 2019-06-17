@@ -1,0 +1,33 @@
+// hide-mobile, hide-moremobile etc
+for s in 'small' 'mobile' 'tablet' 'desc'
+	moresize = 'more-' + s
+	.hide-{s}
+		@media s
+			display none
+	.hide-more{s}
+		@media moresize
+			display none
+
+.hidden,
+[hidden]
+	display none
+
+.overflow
+	overflow-x hidden
+
+.mt0
+	margin-top 0
+.mb0
+	margin-bottom 0
+
+// common classes
+.text-bold
+	font-weight 700
+.text-italic
+	font-style italic
+.text-center
+	text-align center
+.text-left
+	text-align left
+.text-right
+	text-align right

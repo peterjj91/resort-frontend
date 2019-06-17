@@ -1,0 +1,62 @@
+.footer {
+  padding 0px 30px 20px 30px
+  background-image linear-gradient(180deg, #ededed 0%, #ffffff 100%)
+  
+  p {
+    font-size 14px
+    margin-top 0
+    margin-bottom 0
+    color #333333
+  }
+  
+  &__nav {
+    display flex
+    align-items end
+    margin-bottom 28px
+    @extend .row
+    
+    &__block {
+      width 25%
+      padding-right 15px
+    }
+    
+    &__list {
+      padding 0
+      list-style none
+      margin-top 0
+      font-size 14px
+      
+      li {
+        margin-bottom 8px
+      }
+      
+      a {
+        border-bottom none
+        color #555555
+        font-weight 400
+      }
+    }
+    
+    .h2 {
+      margin-bottom: 13px;
+      color: #555555;
+    }
+  }
+  &__contact {
+    display flex
+    justify-content space-between
+    align-items flex-end
+    
+    p {
+      margin-bottom 3px
+    }
+    
+    &__side {
+      padding-bottom: 9px;
+    }
+    
+    &__img {
+
+    }
+  }
+}

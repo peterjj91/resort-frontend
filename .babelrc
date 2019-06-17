@@ -1,22 +1,13 @@
 {
-  "presets": ["@babel/preset-env"],
-  "plugins": [
+  "presets": [
     [
-      "transform-imports",
-      {
-        "lodash": {
-          "transform": "lodash/${member}",
-          "preventFullImport": true
-        }
-      }
-    ],
-    "@babel/plugin-proposal-export-default-from",
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-proposal-function-sent",
-    "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-syntax-import-meta",
-    ["@babel/plugin-proposal-class-properties", { "loose": false }],
-    "@babel/plugin-proposal-json-strings"
+        "@babel/env",
+        {
+            "modules": false,
+            "targets": {
+                "browsers": ["last 2 versions", "ie >= 9"],
+            },
+        },
+    ]
   ]
 }

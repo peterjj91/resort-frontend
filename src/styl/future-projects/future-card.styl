@@ -1,0 +1,70 @@
+.future-card
+	reset-link()
+	width 100%
+	max-width 360px
+	overflow hidden
+	background-color #fff
+	box-shadow 0 2px 1px #c8c8c8
+	border-radius 5px
+	position relative
+	display block
+	flex 0 0 auto
+	&:hover
+		color inherit
+	&--offset
+		margin-top -210px
+	&--hovered
+		transition box-shadow .3s
+		&:hover
+			box-shadow 0px 15px 15px 0px #b9b9b9
+	&__image
+		size 100% 210px
+		background-position 50%
+		background-size cover
+		background-repeat no-repeat
+		border-bottom 1px solid #c9c9c9
+		position relative
+		display flex
+		align-items center
+		justify-content center
+		&:after
+			content ""
+			size 100%
+			background-color transparent
+			position absolute
+			left 0
+			top 0
+			z-index 0
+			transition background .3s
+		{root()}--hovered:hover &:after
+			background-color alpha(#000, .6)
+	&__content
+		color #6c6c6c
+		font-size 12px
+		padding 20px 30px
+	&__caption
+		color #000
+		font-size 16px
+		font-weight 500
+		margin-bottom 5px
+	&__button
+		color #ffffff
+		font-size 12px
+		line-height 2.1
+		font-weight 700
+		text-transform uppercase
+		border 1px solid alpha(#fff, .2)
+		border-radius 100px
+		padding 12px 30px
+		position relative
+		z-index 2
+		visibility hidden
+		opacity 0
+		transition opacity .5s, visibility .5s, background-color .3s
+		&:hover
+			color @color
+			background-color #57b782
+			border-color @background-color
+		{root()}:hover &
+			opacity 1
+			visibility visible

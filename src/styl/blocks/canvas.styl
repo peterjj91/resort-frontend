@@ -1,0 +1,12 @@
+.canvas
+  width descSize
+  background-color white
+  margin 0 auto
+  padding 0 30px
+	position relative
+	z-index 1
+	transition transform .3s
+	@media tablet
+		box-shadow 0 0 5px alpha(#000, .2)
+		&.slide
+			transform translateX(sideWidth)

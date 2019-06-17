@@ -1,6 +1,0 @@
-{
-  "stylusSupremacy.ignoreFiles": [
-    "gulp/**/icons-template.styl",
-    "source/styles/**/*.styl"
-  ]
-}

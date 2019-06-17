@@ -1,0 +1,21 @@
+.future-copy
+	float right
+	size 24px
+	position relative
+	&:before
+		content ""
+		size 24px
+		background url(../images/icon-copy.svg) 100% 50% no-repeat
+		opacity .3
+		transition opacity .2s
+		display block
+	&:hover
+		&:before
+			opacity 1
+	.response
+		color #000000
+		font-size 12px
+		white-space nowrap
+		position absolute
+		top 3px
+		right calc(100% + 15px)

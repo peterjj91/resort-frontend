@@ -1,0 +1,20 @@
+extends extends/_layout
+
+block body
+	.future-projects
+		.future-projects__wrapper
+			.future-projects__logo
+				a.logo(href="index.html")
+					img.logo__image(src='images/future-logo.svg')
+			.future-search
+				input.future-search__input(placeholder="Поиск проекта")
+			.future-projects__row
+				for _ in Array(10)
+					.future-projects__col
+						a.future-card.future-card--hovered(href="index.html")
+							.future-card__image(style="background-image: url(images/project-bg.png)")
+								.future-card__button Смотреть верстку
+							.future-card__content
+								.future-card__caption Название проекта
+								span Обновлено 14.12.16 / 15.43
+

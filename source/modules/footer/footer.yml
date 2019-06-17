@@ -1,6 +1,0 @@
----
-  footer:
-    default:
-      copyright: '&copy;&nbsp;2018 Velichko Konstantin'
-      about: This <a href="https://github.com/zoxon/gulp-front">project source code</a> can be found on Github
-      generated: Generated with gulp-front

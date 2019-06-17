@@ -1,0 +1,70 @@
+.slick-slider
+	box-sizing border-box
+	position relative
+	display block
+	user-select none
+	-webkit-touch-callout none
+	-khtml-user-select none
+	-ms-touch-action pan-y
+	touch-action pan-y
+	-webkit-tap-highlight-color transparent
+.slick-list
+	padding 0
+	margin 0
+	display block
+	position relative
+	overflow hidden
+.slick-list:focus
+	outline none
+.slick-list.dragging
+	cursor pointer
+	cursor hand
+.slick-slider .slick-track,
+.slick-slider .slick-list
+	transform translate3d(0, 0, 0)
+.slick-track
+	display block
+	position relative
+	top 0
+	left 0
+.slick-track:before,
+.slick-track:after
+	content ''
+	display table
+.slick-track:after
+	clear both
+.slick-loading .slick-track
+	visibility hidden
+.slick-slide
+	min-height 1px
+	float left
+[dir='rtl'] .slick-slide
+	float right
+.slick-slide
+	outline none
+.slick-slide img
+	display block
+.slick-slide.slick-loading img
+	display none
+.slick-slide.dragging img
+	pointer-events none
+.slick-loading .slick-slide
+	visibility hidden
+.slick-vertical .slick-slide
+	height auto
+	border 1px solid transparent
+	display block
+.slick-arrow.slick-hidden
+	display none
+
+.slick-arrow
+	overflow hidden
+	text-indent -999em
+	position absolute
+	top 50%
+	transform translateY(-50%)
+	cursor pointer
+.slick-prev
+	left 0
+.slick-next
+	right 0

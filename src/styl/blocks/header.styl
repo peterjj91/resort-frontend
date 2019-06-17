@@ -1,0 +1,35 @@
+.header {
+  padding 0
+  
+  &__content {
+    height 120px
+    display flex
+    justify-content space-between
+  }
+  
+  &__logo {
+    display flex
+    align-items center
+  }
+  
+  &__side {
+    display flex
+    align-items center
+    
+    & > * {
+      margin-right 29px
+      
+      &:last-child {
+        margin-right 0
+      }
+    }
+  }
+  
+  &__lang {
+    .button {
+      padding 6px 17px 5px 17px
+      text-transform uppercase
+      font-size 16px
+    }
+  }
+}

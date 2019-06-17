@@ -1,0 +1,39 @@
+# ONLY USE SPACES HERE -- NO TABS
+
+parser: babel-eslint
+
+extends: [airbnb-base, prettier]
+
+env:
+    browser: true
+    node: true
+    es6: true
+    jquery: true
+
+plugins: [prettier]
+
+globals: {
+    localStorage: true,
+    screen: true,
+    window: true
+}
+
+rules:
+    linebreak-style: off
+    # brace-style: [error, stroustrup, {allowSingleLine: true}]
+    indent: [error, tab, {SwitchCase: 1}]
+    no-tabs: off
+    max-len: [error, {code: 120, ignoreUrls: true}]
+    comma-dangle: [error, always-multiline]
+    no-underscore-dangle: [error, {allowAfterThis: true, allowAfterSuper: true}]
+    no-plusplus: [error, {allowForLoopAfterthoughts: true}]
+    no-console: off
+    prettier/prettier: error
+    arrow-parens: [error, as-needed]
+    prefer-destructuring: warn
+    no-return-assign: warn
+    no-unused-expressions: warn
+    func-names: off
+    no-shadow: off
+    import/prefer-default-export: off
+    eqeqeq: warn

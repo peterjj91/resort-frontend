@@ -1,0 +1,41 @@
+extends extends/_layout
+
+block body
+	.future-projects
+		.future-header
+			.future-header__top
+				.future-header__bg(style="background-image: url(images/project-bg.png)")
+				.row
+					.col-12
+						h1.future-header__title Название проекта
+						
+			.row
+				.col-12
+					.future-header__bottom
+						.future-card.future-card--offset
+							.future-card__image(style="background-image: url(images/project-bg.png)")
+							.future-card__content
+								.future-card__caption 7 страниц
+								-var date = new Date()
+								span Обновлено #{date.getDate()}.#{date.getMonth()}.#{date.getFullYear()} / #{date.getHours()}.#{date.getMinutes()}
+						//- только для администратора
+						//- a.future-nav(href="index-projects.html") Назад к проектам
+		div
+			.row
+				.col-12
+					h2.h1.mt0 Страницы
+					p.future-subcaption Для перехода к странице кликните по ссылкам ниже
+					h3.future-caption Стили
+			ul.future-list
+				li: a.future-list__link(href="_style-guide.html") Страница стилей #[span.future-copy.js-copy-link]
+			.row
+				.col-12
+					h3.future-caption Список страниц
+			ul.future-list
+				li: a.future-list__link(href="main.html") Главная #[span.future-copy.js-copy-link]
+				li: a.future-list__link(href="404.html") 404 #[span.future-copy.js-copy-link]
+				//- можно делать вложенную структуру
+				//-li
+					a.future-list__link(href="#") Главная #[span.future-copy.js-copy-link]
+					ul.future-list
+						li: a.future-list__link(href="#") Главная #[span.future-copy.js-copy-link]

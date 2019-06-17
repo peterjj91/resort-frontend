@@ -1,0 +1,130 @@
+body
+	// color #4d5259
+	color #212121
+	font-family fontFamily, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif // fallback system fonts
+	font-size 16px
+	font-weight 400
+	line-height 1.6
+	-webkit-font-smoothing antialiased // mac fix
+	-webkit-text-stroke 1px transparent // mac fix
+	-webkit-text-size-adjust 100% // stop iphone resize when orientation landscape
+
+// -------
+
+h1, .h1
+	font-size 36px
+	font-weight 700
+	margin-top 20px
+	margin-bottom 20px
+h2, .h2
+	font-size 32px
+	line-height normal
+	font-weight 700
+	margin-top 20px
+	margin-bottom 20px
+h3, .h3
+	font-size 26px
+	line-height normal
+	font-weight 700
+	margin-top 20px
+	margin-bottom 20px
+h4, .h4
+	font-size 24px
+	line-height normal
+	font-weight 700
+	margin-top 20px
+	margin-bottom 20px
+h5, .h5
+	font-size 20px
+	line-height normal
+	font-weight 400
+	margin-top 20px
+	margin-bottom 20px
+h6, .h6
+	font-size 18px
+	line-height normal
+	margin-top 20px
+	margin-bottom 20px
+	
+// -------
+
+.text-small
+	font-size 12px
+	font-style italic
+	line-height 20px
+	
+
+// -------
+
+.main-title 
+	min-height 100px
+	background-image url(../images/title-background.jpg)
+	color white
+	padding 20px 29px
+	display flex
+	align-items center
+	margin-bottom 53px
+	.h1, .h2 
+		margin 0
+
+// -------
+
+p
+	margin-top 20px
+	margin-bottom 20px
+ul, ol
+	padding-left 40px
+	margin-top 20px
+	margin-bottom 20px
+b, strong
+	font-weight 700
+i, em
+	font-style italic
+sup
+	font-size 85%
+	line-height 0
+	vertical-align baseline
+	position relative
+	top -0.45em
+sub
+	font-size 85%
+	line-height 0
+	vertical-align baseline
+	position relative
+	top 0.2em
+u
+	text-decoration underline
+
+blockquote
+	position relative
+	&:before,
+	&:after
+		font-family "Times New Roman"
+		color #bdbdbd
+		font-size 3em
+		line-height 0.1em
+		vertical-align -.45em
+		display inline-block
+
+	&:before
+		content "\201C"
+		margin-right 5px
+	&:after
+		content "\201D"
+		margin-left 5px
+
+code
+	font-family monospace
+	
+
+a
+	border-text()
+	&:hover
+		color red-color
+		border-color alpha(red-color, .3)
+
+// -------
+
+p + ul,
+p + ol
+	margin-top -20px

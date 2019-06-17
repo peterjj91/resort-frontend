@@ -1,0 +1,82 @@
+// skeleton
+body
+	min-height 100vh
+	display flex
+	flex-direction column
+	background-image url(../images/main-background.jpg)
+.main-container
+	width 100%
+	max-width pageWidth
+	margin-left auto
+	margin-right auto
+	background-color white
+.canvas
+	min-height 100vh
+	display flex
+	flex-direction column
+.header
+	position relative
+	flex 0 0 auto
+.main
+	display block
+	flex 1 0 auto
+	padding-bottom 61px
+	&__wrapper
+		padding 0px 29px
+.footer
+	position relative
+	flex 0 0 auto
+
+
+// grid
+.row
+	width 100%
+	max-width pageWidth + colGap
+	margin-left auto
+	margin-right auto
+	display flex
+	flex-flow row wrap
+	.row
+		width auto
+		margin-left -1 * (colGap/2)
+		margin-right -1 * (colGap/2)
+		@media mobile
+			margin-left -15px
+			margin-right -15px
+			
+[class^="col-"]
+	padding-right (colGap/2)
+	padding-left (colGap/2)
+	flex 0 1 auto
+	@media mobile
+		padding-right 15px
+		padding-left 15px
+
+
+for num in (1..12)
+	.col-{num}
+		width (100% * num / 12)
+		@media mobile
+			width 100%
+	.col-offset-{num}
+		margin-left (100% * num / 12)
+
+for num in (1..5)
+	.col-{num}-5
+		width (100% * num / 5)
+		@media mobile
+			width 100%
+
+sizes = {'media': 'desc', 'let': 'l'}, {'media': 'tablet', 'let': 'md'}, {'media': 'mobile', 'let': 'sm'}, {'media': 'small', 'let': 'xs'}
+for s in sizes
+	str = s['media']
+	@media str
+		for num in (1..12)
+			.col-{s['let']}-{num}
+				width (100% * num / 12)
+			.col-{s['let']}-offset-{num}
+				margin-left (100% * num / 12)
+	@media str
+		for num in (1..5)
+			.col-{s['let']}-{num}-5
+				width (100% * num / 5)

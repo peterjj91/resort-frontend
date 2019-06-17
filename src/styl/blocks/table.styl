@@ -1,0 +1,116 @@
+table,
+.table
+	max-width 100%
+	border 1px solid gray-color
+	table-layout fixed
+	thead,
+	&__thead
+		font-weight 700
+		background-color #F0F0F0
+		td, th
+			border 1px solid transparent
+	th, td,
+	&__td,
+	&__th
+		text-align left
+		padding 11px 30px
+		border none
+		border-left 1px solid transparent
+		border-right 1px solid transparent
+		border-bottom 1px solid #F0F0F0
+	.favourite-icons
+		li
+			display none
+			&:last-child
+				display inline-block
+	tr,
+	&__tr
+		&:hover
+			td, {root()}__td
+				background-color #F0F0F0
+				border-color #F0F0F0
+			.favourite-icons
+				background-image linear-gradient(to right, rgba(240, 240, 240, 0) 0%, #f0f0f0 9%, #f0f0f0 100%)
+				li
+					display inline-block
+	tbody,
+	&__tbody
+		th, td,
+		&__td,
+		&__th
+			padding-top 23px
+			padding-bottom 12px
+	&--programm
+		td
+			position relative
+			&:first-child
+				width 29%
+				padding-right 20px
+		tbody,
+		&__tbody
+			td
+				padding-right 60px
+		p
+			margin-bottom 7px
+	
+.table
+	border-collapse collapse
+	display table
+	&__tr
+		display table-row
+	&__thead
+		display table-header-group
+	&__tbody
+		display table-row-group
+	&__tfoot
+		display table-footer-group
+	&__col
+		display table-column
+	&__colgroup
+		display table-column-group
+	&__td,
+	&__th
+		display table-cell
+	&__caption
+		display table-caption
+	&__text
+		margin 0
+		&--light
+			color #a4b3b7
+	    font-size 16px
+	    font-weight 400
+			line-height 16px
+			margin 0
+	a
+		border-bottom none
+
+.table-scrollable
+	overflow auto
+	&__container
+		min-width pageWidth
+	a
+		border-bottom none
+
+.table-separated
+	@media tablet
+		border none
+		&,
+		tbody
+			display block
+		thead
+			display none
+		tr
+			border 1px solid #c5c5c5
+			display block
+			& + tr
+				margin-top 20px
+		td
+			// padding-left 0
+			// padding-right 0
+			border none
+			display block
+	@media more-tablet
+		&__caption
+			display none
+	a
+		border-bottom none

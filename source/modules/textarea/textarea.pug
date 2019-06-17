@@ -1,7 +1,0 @@
-include ../textfield/textfield
-
-mixin textarea()
-	- delete attributes.type;
-
-	+textfield(cols="30" rows="10" multiline=true)&attributes(attributes)
-		block

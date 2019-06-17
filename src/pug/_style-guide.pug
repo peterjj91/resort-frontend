@@ -1,0 +1,347 @@
+extends extends/_layout
+
+block body
+	-var rowWidth = 1340
+	-var colGutter = 40
+	-var colWidth = Math.round((rowWidth - colGutter*11) / 12)
+
+	-var colors = [{'hex': '1C2E36'}, {'hex': '25BCCA', 'white': true, 'black': true}, {'hex': 'D6E1E4'}, {'hex': 'E6EDEF', 'black': true}, {'hex': 'A4B3B7'}, {'hex': 'EE2020'}]
+	.style
+		.style__header
+			.row
+				.col-12
+					include includes/_logo
+		.row
+			.col-12
+				.style__wrapper
+					.style__title Colors
+					.row
+						each color in colors
+							.col-2.col-md-4.col-sm-6
+								.style-color(style={'background-color': '#' + color['hex']})
+									.style-color__additional
+										if color['black']
+											.row.style-color__black
+												each i in [1,2,3,4,5]
+													.col-1-5.col-sm-1-5.style-color__sub
+										if color['white']
+											.row.style-color__white
+												each i in [1,2,3,4,5]
+													.col-1-5.col-sm-1-5.style-color__sub
+								p.style__info.text-bold= color['hex']
+
+
+				.style__wrapper
+					.style__title Grid layout
+					p
+						span.style__info #[span.text-bold Total Width:] #{rowWidth}px
+						span.style__info #[span.text-bold Columns:] 12
+						span.style__info #[span.text-bold Column Width:] #{colWidth}px
+						span.style__info #[span.text-bold Gutter Width:] #{colGutter}px
+					
+					each size in [1, 2, 3, 4, 5, 6, 12]
+						.row.style__show-grid
+							-for(var i = 1; i <= size; i++)
+								-var cl = size==5 ? 'col-1-5' : 'col-' + 12/size
+								div(class=cl)
+									if(i == 1)
+										p.text-center= Math.round((rowWidth - (colGutter * (size-1))) / size)
+
+				.style__wrapper
+					.style__title Typography
+					table.style-typo
+						tbody
+							tr
+								td.style-typo__desc Text: H1
+								td: h1 Самый большой заголовок
+							tr
+								td.style-typo__desc Text: H2
+								td: h2 Заголовок второго уровня
+							tr
+								td.style-typo__desc Text: H3
+								td: h3 Заголовок третьего уровня
+							tr
+								td.style-typo__desc Text: H4
+								td: h4 Четвертого уровня заголовок
+							tr
+								td.style-typo__desc Text: H5#[br]Text: Introduction
+								td: h5 Волшебный мир, в который он уже вступал, который уже возникал из туманных волн прошедшего, шевельнулся — и исчез. Дорога из Марьина огибала лесок; легкая пыль лежала на ней, еще не тронутая со вчерашнего дня ни колесом, ни ногою.
+							tr
+								td.style-typo__desc Text: Body
+								td: p Прогуляться собираетесь? Вечерок-то будет хорош, только грозы бы вот не было. А впрочем, и лучше, кабы освежило... И вдруг Раскольникову ясно припомнилась вся сцена третьего дня под воротами; он сообразил, что кроме дворников там стояло тогда еще несколько человек, стояли и женщины.  Он припомнил один голос, предлагавший вести его прямо в квартал. Лицо говорившего не мог он вспомнить и даже теперь не признавал, но ему памятно было, что он даже что-то ответил ему тогда, обернулся к нему... Оба сидели рядом, грустные и убитые, как бы после бури выброшенные на пустой берег одни. Он смотрел на Соню и чувствовал, как много на нем было ее любви, и странно, ему стало вдруг тяжело и больно, что его так любят. Да, это было странное и ужасное ощущение! Идя к Соне, он чувствовал, что в ней вся его надежда и весь исход; он думал сложить хоть часть своих мук, и вдруг, теперь, когда всё сердце ее обратилось к нему, он вдруг почувствовал и сознал, что он стал беспримерно несчастнее, чем был прежде.
+							tr
+								td.style-typo__desc Text: Small
+								td: p.text-small Судья, попечитель богоугодных заведений, смотритель училищ и почтмейстер уходят и в дверях сталкиваются с возвращающимся квартальным. Ну вот видишь, дура, ну вот видишь: из-за тебя, этакой дряни, гость изволил стоять на коленях; а ты вдруг вбежала как сумасшедшая.
+							tr
+								td.style-typo__desc ul, li
+								td
+									p Привет, я список и я бываю таким:
+									ul
+										li Первое
+										li Второе тоже
+										li И десятое
+									p И бываю таким:
+									ul
+										li Первое
+										li Второе тоже
+										li Третье
+
+				.style__wrapper
+					.style__title Надстрочные и подстрочные индексы
+					p Важно следить за тем, чтобы элементы надстрочных и подстрочных индексов не увеличивали высоту строки, потому что это портит вид текстового блока. Пример: 2#[sup 3]. Еще пример: H#[sub 2]SO#[sub 4]. В обоих случаях высота строки от индексов не должна меняться. Если отступ между первой и второй строками увеличился, значит, что-то сделано неправильно.
+
+				.style__wrapper
+					.style__title Оформление текста
+					p
+						| Наиболее простыми способами выделения информации являются #[strong полужирное] и #[em курсивное] начертания
+						| Этого можно достичь, используя теги #[code.text-bold b,] #[code.text-bold strong,] #[code.text-italic i,] #[code.text-italic em,] а также классы #[code.text-bold .text-bold] и #[code.text-italic .text-italic]
+					.text-center Текст, как и любой другой блок можно центровать. Достаточно просто добавить класс #[code .text-center]
+					.text-left Текст по левому краю с классом #[code .text-left]
+					.text-right Текст по правому краю с классом #[code .text-right]
+
+				.style__wrapper
+					.style__title Цитаты
+					blockquote Цитата Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed felis ultrices, feugiat orci quis, dictum ante. Suspendisse quis dui eu felis pellentesque viverra sit amet ac augue. Vivamus varius libero purus, sit amet dignissim magna porttitor nec. Etiam tempor ullamcorper commodo. Sed felis dui, dapibus sit amet erat id, euismod lobortis nulla.
+
+				.style__wrapper
+					.style__title Links
+					p Специальный текст для того, чтобы показать стиль #[a(href="#") ссылок], кстати ссылки никогда не переносятся.
+					p.style__caption a:
+					.row
+						.col-12
+							a(href="#") Такая бывает длинная ссылка
+				.style__wrapper
+					.style__title Tooltip
+					p Иконка с тултипом
+						span.tooltip
+							span.tooltip__content.js-tooltip Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus iste, vel beatae magnam, tempore eligendi, debitis ab nam placeat pariatur odio illo aspernatur iusto architecto quis ipsum repudiandae suscipit id!
+					p: span.tooltip.tooltip--extended
+						a(href="#") Тултип на элементе
+						span.tooltip__content.js-tooltip Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus iste, vel beatae magnam, tempore eligendi, debitis ab nam placeat pariatur odio illo aspernatur iusto architecto quis ipsum repudiandae suscipit id!
+				.style__wrapper
+					.style__title Buttons
+					
+					.row
+						.col-3
+							p.style__caption.mt0 Button
+							input(type="submit", value="Кнопка")
+						.col-3
+							p.style__caption.mt0 Disabled
+							button.button(disabled) Кнопка
+					.row
+						.col-3
+							p: a.button.button--transparent(href="#") Кнопка
+					.row
+						.col-3
+							button.button.button--dark Кнопка
+						.col-3
+							.button.button--dark(disabled) Кнопка
+
+				.style__wrapper
+					.style__title Input fields
+					.row
+						.col-6.col-md-12
+							p.style__caption.mt0 Input
+							label.label
+								span.label-text Логин
+								input(type="text")
+						.col-6.col-md-12
+							p.style__caption.mt0 Input Mask
+							label.label.js-inputmask-phone
+								span.label-text Телефон
+								input(type="text")
+					.row
+						.col-3.col-md-6
+							p.style__caption Complete
+							label.label
+								span.label-text Логин
+								input(type="text", value="shevlyakov.danil")
+						.col-3.col-md-6
+							p.style__caption Password
+							label.label
+								span.label-text Пароль
+								span.input-password.js-input-password
+									input(type="password", value="hello future")
+									span.input-password__show.js-input-password-toggle
+						.col-3.col-md-6
+							p.style__caption Error
+							label.label.input-error
+								span.label-text Логин
+								input(type="text", value="")
+								span.input-error__text Заполните поле
+
+				.style__wrapper
+					.style__title Input file
+					.row
+						.col-6.col-md-12
+							p.style__caption.mt0 Input
+							label.input-file.js-input-file
+								input(type="file")
+								.input-file__fake-input.js-input-file-fake Загрузите файл...
+					.row
+						.col-3.col-md-6
+							p.style__caption Complete
+							label.input-file.js-input-file
+								input(type="file")
+								.input-file__fake-input.js-input-file-fake Изменить...
+								span.input-file__loaded test-image.png
+						.col-3.col-md-6
+							p.style__caption Error
+							label.input-file.input-error.js-input-file
+								input(type="file")
+								.input-file__fake-input.js-input-file-fake Загрузите файл...
+
+				.style__wrapper
+					.style__title Select
+					.row
+						.col-6.col-md-6
+							p.style__caption.mt0 Select
+							span.label-text Какой сделать выбор
+							+select('Выберите вариант', ['Первый вариант', 'Второй вариант', 'Третий вариант'])
+						.col-3.col-md-6
+							p.style__caption.mt0 Error
+							span.label-text Какой сделать выбор *
+							+select('Выберите вариант', ['Первый вариант', 'Второй вариант', 'Третий вариант'])(class='input-error')
+								span.input-error__text Выберите что-то
+
+					
+				.style__wrapper
+					.style__title Checkbox / radio button
+					.row
+						.col-3.col-md-6
+							p.style__caption.mt0 Checkbox
+							+checkbox('Принимаю условия')
+							
+						.col-3.col-md-6
+							p.style__caption.mt0 Complete
+							+checkbox('Принимаю условия', true)
+					.row
+						.col-3.col-md-6
+							p.style__caption Radio button
+							+radiobutton('Принимаю условия', 'radio')
+							
+						.col-3.col-md-6
+							p.style__caption Complete
+							+radiobutton('Принимаю условия', 'radio', true)
+
+				.style__wrapper
+					.style__title Table
+					p.text-italic
+						| В мобильной версии прокручивается, если обернута #[code div.table-scrollable]
+						br
+						| Или разбивается на множество таблиц по строкам, если имеет класс #[code .table-separated]
+					p Доступна верстка как с помощью html-таблиц, так и блоков #[code &lt;div&gt;]
+
+					.table-scrollable
+						.table-scrollable__container
+							table
+								colgroup(width="310")
+								colgroup(width="370")
+								colgroup(width="400")
+								colgroup(width="160")
+								colgroup(width="100")
+								thead
+									tr
+										th Имя
+										th Фамилия
+										th Отчество
+										th Год рождения
+										th Баллы
+										
+								tbody
+									each i in Array(3)
+										tr
+											td Григорий
+											td Отрепьев
+											td Антонович
+											td 12.01.1979
+											td 10
+					br
+					br
+					table.table-separated
+						colgroup(width="310")
+						colgroup(width="370")
+						colgroup(width="400")
+						colgroup(width="160")
+						colgroup(width="100")
+						thead
+							tr
+								th Имя
+								th Фамилия
+								th Отчество
+								th Год рождения
+								th Баллы
+								
+						tbody
+							each i in Array(3)
+								tr
+									td
+										span.table-separated__caption Имя
+										br.hide-moretablet
+										| Григорий
+									td
+										span.table-separated__caption Фамилия
+										br.hide-moretablet
+										| Отрепьев
+									td
+										span.table-separated__caption Отчество
+										br.hide-moretablet
+										| Антонович
+									td
+										span.table-separated__caption Год рождения
+										br.hide-moretablet
+										| 12.01.1979
+									td
+										span.table-separated__caption Баллы
+										br.hide-moretablet
+										| 10
+				
+				.style__wrapper
+					.style__title Изображения
+					p Дополнительными классами #[code text-left, text-right] и #[code text-center] для блока #[code .image] можно задать соответствующее выравнивание.
+					.image.text-right
+						img(src="images/example-image.png")
+						span.image__description Подпись к изображению
+
+				.style__wrapper
+					.style__title Модальное окно (popup)
+					button.button.js-popup(data-container="#popup", data-content="includes/popup.html") Открыть popup
+
+				.style__wrapper
+					.style__title Вкладки
+					.tabs.js-tabs
+						.tabs__toggles
+							.tabs__toggle.js-tabs-toggle Вкладка 1
+							.tabs__toggle.js-tabs-toggle Вкладка 2
+							.tabs__toggle.js-tabs-toggle Вкладка 3
+						.tabs__tab.js-tabs-tab
+							p Контент вкладки 1
+							.tabs.js-tabs
+								.tabs__toggles
+									.tabs__toggle.js-tabs-toggle Внутренняя вкладка 1
+									.tabs__toggle.js-tabs-toggle Внутренняя вкладка 2
+								.tabs__tab.js-tabs-tab Контент внутренней вкладки 1
+								.tabs__tab.js-tabs-tab Контент внутренней вкладки 2
+						.tabs__tab.js-tabs-tab Контент вкладки 2
+						.tabs__tab.js-tabs-tab Контент вкладки 3
+
+				.style__wrapper
+					.style__title Раскрывающийся контент
+					p Элемент «Раскрывающийся» (класс accordion) используется для формирования раскрывающихся элементов. В частности, для вопросов и ответов.
+					.accordion.js-accordion
+						for _, i in Array(3)
+							.accordion__item.js-accordion-item
+								.accordion__caption.js-accordion-toggle
+									| Заголовок аккордеона #{i+1}
+									.accordion__toggle
+								.accordion__content
+									p Контент аккордеона #{i+1}
+									if i == 0
+										.accordion.js-accordion
+											for _, j in Array(2)
+												.accordion__item.js-accordion-item
+													.accordion__caption.js-accordion-toggle
+														| Заголовок внутреннего аккордеона #{j+1}
+														.accordion__toggle
+													.accordion__content
+														p Контент внутреннего аккордеона #{j+1}

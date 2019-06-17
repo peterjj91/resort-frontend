@@ -1,0 +1,25 @@
+mixin checkbox(text, check)
+	label.checkbox
+		input(type="checkbox" hidden)&attributes({'checked': check})
+		span.checkbox__fake-input
+		if text
+			span.checkbox__text= text
+
+mixin radiobutton(text, name, check)
+	label.radiobutton
+		input(type="radio" hidden)&attributes({'checked': check, 'name': name})
+		span.radiobutton__fake-input
+		if text
+			span.radiobutton__text= text
+
+mixin select(selectedText, options=[])
+	.select.js-select(class!=attributes.class)
+		.select__selected.js-select-selected= selectedText
+		.select-list.js-select-list
+			each i in options
+				.select-list__item.js-select-list-item= i
+		select
+			each i in options
+				option= i
+		if block
+			block

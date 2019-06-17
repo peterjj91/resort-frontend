@@ -1,0 +1,62 @@
+.tabs
+	&__toggles
+		margin-bottom 30px
+		display flex
+	&__toggle
+		border-bottom 4px solid transparent
+		padding 6px 20px 7px 20px
+		position relative
+		flex 0 1 auto
+		font-size 16px
+		font-weight 500
+		cursor pointer
+		&:not(.active):hover
+			background-color gray-color
+		&.active
+			border-color #f39324
+	&__tab
+		padding 0px 0px 0px 0px
+		&:not(.active)
+			display none
+		.button
+			min-width 172px
+		p
+			margin-top 0
+			line-height 26px
+	&__img
+		margin-bottom 30px
+	&--vertical
+		& > .tabs__toggles {
+			float right
+			width 331px
+			display block 
+			margin-right -30px
+			margin-top 12px
+			
+			.tabs__toggle {
+				width 100%
+				margin 0
+				background-color #ffedd6
+				text-align left
+				padding 12px 30px 13px 30px
+				border none !important
+				&.active {
+					@extends .button
+					background-color #E53100 !important
+					padding 12px 30px 13px 30px
+					text-align left
+				}
+				&:not(.active):hover {
+
+				}
+			}
+		}
+		& > .tabs__tab {
+			padding-top 5px
+			padding-right 331px
+		}
+	&--programm {
+		& > .tabs__toggles {
+			border-bottom 1px solid #f0f0f0
+		}
+	}

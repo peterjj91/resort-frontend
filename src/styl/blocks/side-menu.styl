@@ -1,0 +1,14 @@
+.side-menu
+	width sideWidth
+	height 100%
+	overflow auto
+	background-color #eee
+	padding 15px
+	position fixed
+	top 0
+	right 100%
+	z-index 0
+	transition transform .3s
+	@media tablet
+		&.open
+			transform translateX(100%)

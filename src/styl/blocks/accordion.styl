@@ -1,0 +1,61 @@
+.accordion
+	&__item
+		margin-bottom 5px
+		&:last-child
+			margin-bottom 0
+		&.active
+			{root()}__caption
+				&:before
+					display none
+	&__caption
+		font-weight 500
+		padding 13px 31px 12px 31px
+		cursor pointer
+		position relative
+		background-color #f0f0f0
+		&:hover
+			background-color gray-color
+		{root()}__item.active > &
+			margin 0
+		&:before
+			content ""
+			position absolute
+			top 16px
+			right 38px
+			width 2px
+			height 18px
+			background-color #f39324
+		&:after {
+			content ""
+			position absolute
+			top 24px
+			right 30px
+			width 18px
+			height 2px
+			background-color #f39324
+		}
+	// &__toggle
+	// 	size 32px
+	// 	vertical-align middle
+	// 	background #fff //url('../images/icon-arrow-down.svg') 50% no-repeat
+	// 	border-radius 50%
+	// 	margin-left 10px
+	// 	display inline-block
+	// 	transition transform .3s, background .3s
+	// 	{root()}__item.active > &
+	// 		background-color orange-color
+	// 		// background-image url('../images/icon-arrow-down-white.svg')
+	// 		transform rotate(180deg)
+	&__content
+		padding-left 31px
+		padding-right 20px
+		margin-top 20px
+		margin-bottom 23px
+		display none
+		{root()}__item.active > &
+			display block
+		p
+			margin-bottom 46px
+			margin-top 23px
+			&:last-child
+				margin-bottom 0

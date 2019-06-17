@@ -1,0 +1,43 @@
+.future-nav
+	color #000
+	font-size 12px
+	line-height 1
+	font-weight 500
+	text-transform uppercase
+	white-space nowrap
+	background-color #ffffff
+	border 1px solid #e3e3e3
+	border-left none
+	border-radius 5px
+	padding 16px 30px
+	margin-left 30px
+	position relative
+	display inline-block
+	transition box-shadow .3s
+	@media tablet
+		margin-left 10px
+		margin-top 20px
+	@media mobile
+		width calc(100% - 10px)
+		max-width 350px
+	&:after,
+	&:before
+		position absolute
+		content ''
+		display block
+		width 12px
+		height 61%
+		left -5px
+		border-radius 4px
+		border-left 1px solid #e3e3e3
+		background-color #fff
+	&:after
+		top 0
+		transform rotate(27deg)
+	&:before
+		bottom 0
+		transform rotate(-27deg)
+	&:hover
+		color @color
+		border-color #e3e3e3
+		box-shadow 0 0 20px alpha(#000, .1)

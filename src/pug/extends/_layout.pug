@@ -1,0 +1,171 @@
+include ../includes/_mixins
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		title Отдых
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+		//- ===== favicons =====
+		link(rel="shortcut icon" type="image/x-icon" href="images/favicon.ico")
+		link(rel="apple-touch-icon" sizes="57x57" href="images/favicon-iphone.svg")
+		link(rel="apple-touch-icon" sizes="114x114" href="images/favicon-iphone.svg")
+		link(rel="apple-touch-icon" sizes="72x72" href="images/favicon-iphone.svg")
+		link(rel="apple-touch-icon" sizes="144x144" href="images/favicon-iphone.svg")
+		link(rel="apple-touch-icon" sizes="57x57" href="images/favicon-iphone.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="images/favicon-iphone.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="images/favicon-iphone.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="images/favicon-iphone.png")
+
+		//- ===== styles =====
+		link(rel="stylesheet", href="css/fonts.css")
+		link(rel="stylesheet", href="css/all.css")
+	body
+		.canvas.js-canvas
+			block body
+				header.header
+					ul.nav-mini
+						li
+							a(href="#") 
+								span Leisure
+						li
+							a(href="#") 
+								span Mice
+						li
+							a(href="#") 
+								span Gourmet & wine travel
+						li
+							a(href="#") 
+								span SPA & Health
+					.header__content
+						.header__logo
+							include ../includes/_logo.pug
+						.header__side
+							ul.nav-main.nav-main--header
+								li
+									a(href="#") 
+										span О выставке
+								li
+									a(href="#") 
+										span Участие
+								li
+									a(href="#") 
+										span Посещение
+								li
+									a(href="#") 
+										span Программа
+								li
+									a(href="#") 
+										span Медиа
+							ul.social
+								li
+									a(href="#")
+										img(src="images/facebook.svg")
+								li
+									a(href="#")
+										img(src="images/vk.svg")
+								li
+									a(href="#")
+										img(src="images/instagram.svg")
+							.header__search
+								img(src="images/search.svg")
+							.header__profile
+								img(src="images/profile.svg")
+							.header__lang
+								a.button en
+										
+						.burger.hide-moretablet.js-side-toggle
+				main.main
+					block content
+				footer.footer
+					.footer__nav
+						.footer__nav__block
+							.h3 О выставке
+							ul.footer__nav__list
+								li
+									a(href="#") Официальная поддержка
+								li
+									a(href="#") Место и даты проведения
+								li
+									a(href="#") Online каталог
+								li
+									a(href="#") План выставки
+								li
+									a(href="#") Отзывы участников и посетителей
+								li
+									a(href="#") Организаторы
+								li
+									a(href="#") Участники
+								li
+									a(href="#") Архив (история)
+								li
+									a(href="#") Контакты
+						.footer__nav__block
+							.h3 Участникам
+							ul.footer__nav__list
+								li
+									a(href="#") Зачем участвовать
+								li
+									a(href="#") Условия участия
+								li
+									a(href="#") Стенд
+								li
+									a(href="#") Специальное предложение
+								li
+									a(href="#") Сервисы
+								li
+									a(href="#") Спонсорские рекламные возможности
+								li
+									a(href="#") Travel Technology
+								li
+									a(href="#") Полезная информация
+						.footer__nav__block
+							.h3 Посетителям
+							ul.footer__nav__list
+								li
+									a(href="#") Зачем посещать
+								li
+									a(href="#") Регистрация посетителя
+								li
+									a(href="#") План выставки
+								li
+									a(href="#") Программа B2B HOSTED BUYER
+								li
+									a(href="#") Акция выигрывай на отдыхе
+								li
+									a(href="#") Сервисы посетителям
+								li
+									a(href="#") Гостиница и визовая поддержка
+						.footer__nav__block
+							.h3 Медиа
+							ul.footer__nav__list
+								li
+									a(href="#") Релиз выставки
+								li
+									a(href="#") Новости
+								li
+									a(href="#") Медиа партнеры
+								li
+									a(href="#") Фото и видео
+								li
+									a(href="#") Аккредитация журналистов
+								li
+									a(href="#") Баннеры
+					.footer__contact
+						.footer__contact__main
+							p © 1995–2019
+							p 25-й Международный форум-выставка по туризму 
+								a(href="#") ОТДЫХ LEISURE
+							p 10–12 сентября 2019
+							p ЦВК «Экспоцентр» Пав. 2 (залы 1, 2, 3)
+						.footer__contact__side
+							img(src="images/company.png", alt="").footer__contact__img
+		aside.side-menu.js-side side-menu
+		.popup-bg.js-popup-bg
+			.popup#popup
+				.popup__close.js-popup-close
+				.popup__loaded.js-popup-loaded
+
+		script(type="text/javascript", src="js/all.js", async="async")

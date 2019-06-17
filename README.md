@@ -1,62 +1,33 @@
-# Gulp Front
+Шаблон верстки
+========
 
-_A lean and powerful, gulp-based boilerplate for better front-end coding with [Gulp](http://gulpjs.com/), [Pug](https://pugjs.org/) and [Stylus](http://stylus-lang.com/)_
+Перед началом работы рекоментудется посетить [страницу в wiki](https://sites.google.com/a/future-group.ru/instructions/razrabotka/verstka)
 
+[Документация по самому шаблону](https://sites.google.com/a/future-group.ru/instructions/razrabotka/verstka/dokumentacia-po-sablonu-verstki)
 
-## Demo
-
-[github.com/peterjj91/frontend-boilerplate](https://github.com/peterjj91/frontend-boilerplate)
-
-## Documentation
-
-More information see in [docs](docs/README.md) folder
-
-## Core features
-
-- Modern and fast build tool
-- Module based BEM CSS framework
-- Automatic icon system based on SVG Symbols
-- Easy PNG Sprites generation (including @2x)
-- A convenient @media mixins
-- Smart image compression
-
-## Quickstart
-
-1.  Install the [node.js](https://nodejs.org)
-2.  Clone the project or [download](https://github.com/peterjj91/frontend-boilerplate/archive/master.zip) the file
-    ```sh
-    git clone git@github.com:peterjj91/frontend-boilerplate.git --depth 1 my-project
-    ```
-3.  Go to project folder and run
-    ```bash
-    npm run setup
-    ```
-4.  Start dev server
-    ```bash
-    npm start
-    ```
-5.  In browser open page with address [`http://localhost:3000/`](http://localhost:3000/)
-
-## Main tasks
-
-- `npm run dev` - launches watchers and server
-- `npm run build` - compile a project
-- `npm run zip` - compile a project in zip
-- `npm run deploy` - compile a project and push in `build` branch to git repository
-- `npm run cleanup` - remove demo app
-
-## Module generator
-
-Create empty module by name in `source/modules` folder
-
-By default generate only `*.pug` and `*.styl` files.
-
-You can call `amo` with additional params like `js` and `yml`
-
-```sh
-npm run amo <module-name> [js || yml]
+### Зависимости
+```bash
+npm i -g webpack || yarn add global webpack
+npm i			 || yarn
 ```
 
-## License
+### Сборка
+Девелоп сборка c `browser-sync`:
+```bash
+npm run build:dev  || yarn build:dev
+```
+Продакшн сборка:
+```bash
+npm run build:prod || yarn build:prod
+```
 
-[The MIT License (MIT)](LICENSE)
+### Релиз
+Релиз на сервер:
+```bash
+yarn sftp
+```
+
+Сборка + релиз:
+```bash
+npm run release || yarn release
+```

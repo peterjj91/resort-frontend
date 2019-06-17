@@ -1,0 +1,51 @@
+.image
+	margin-top 0.8em
+	margin-bottom 0.8em
+	display inline-block
+	img
+		max-width 100%
+		display block
+	&__description
+		font-size 13px
+		margin-top 10px
+		margin-bottom 0
+		display inline-block
+	& + p
+		margin-top 0
+
+.icon
+	display inline-block
+	vertical-align middle
+	&--message
+		width 20px
+		height 16px
+		background-image url(../images/message.svg)
+		&.active
+			background-image url(../images/message-active.svg)
+	&--video
+		width 24px
+		height 16px
+		background-image url(../images/video.svg)
+		&.active
+			background-image url(../images/video-active.svg)
+	&--love
+		width 20px
+		height 18px
+		background-image url(../images/love.svg)
+		&.active
+			background-image url(../images/love-active.svg)
+	&--map
+		width 20px
+		height 18px
+		background-image url(../images/map.svg)
+		&.active
+			background-image url(../images/map-active.svg)
+	&--full
+		&.icon
+			&--love
+				background-image url(../images/love-full.svg)
+				
+
+img
+	max-width 100%
+	vertical-align middle

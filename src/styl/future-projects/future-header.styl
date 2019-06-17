@@ -1,0 +1,48 @@
+.future-header
+	position relative
+	margin-bottom 50px
+	&__top
+		size 100% 250px
+		color #fff
+		overflow hidden
+		position relative
+		display flex
+		align-items center
+		@media tablet
+			height auto
+			display block
+			padding-bottom 210px
+	&__bottom
+		display flex
+		align-items flex-end
+		justify-content space-between
+		@media tablet
+			display block
+	&__bg
+		background-size cover
+		background-repeat no-repeat
+		background-position top center
+		position absolute
+		top -15px
+		bottom -15px
+		right -20px
+		left -20px
+		z-index -1
+		filter blur(25px)
+		&:after
+			content ""
+			size 100%
+			background-color alpha(#000, .3)
+			position absolute
+			top 0
+			left 0
+			display block
+	&__title
+		margin-left 420px
+		font-weight 500
+		margin-top 10px
+		margin-bottom 0
+		@media tablet
+			margin-left 0
+			margin-top 20px
+			margin-bottom 20px

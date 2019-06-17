@@ -1,0 +1,35 @@
+.future-list
+	border-top 1px solid #e3e3e3
+	list-style none
+	margin-top 0
+	margin-bottom 0
+	padding-left 0
+	& &
+		border-top none
+	&__link
+		reset-link()
+		display block
+		background-color #fff
+		border-bottom @border-top
+		padding 16px "calc(50vw - %s)" % (pageWidth/2)
+		@media page
+			padding-left 20px
+			padding-right 20px
+		@media mobile
+			padding-left 15px
+			padding-right 15px
+		&:hover
+			color #0b40ff
+			border-color #e3e3e3
+		{root()} {root()} &
+			padding-left "calc(50vw - %s)" % (pageWidth/2 - 30px)
+			@media page
+				padding-left 40px
+			@media mobile
+				padding-left 30px
+		{root()} {root()} {root()} &
+			padding-left "calc(50vw - %s)" % (pageWidth/2 - 60px)
+			@media page
+				padding-left 60px
+			@media mobile
+				padding-left 45px

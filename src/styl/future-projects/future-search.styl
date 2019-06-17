@@ -1,0 +1,24 @@
+.future-search
+	max-width (360px*2 + 50px)
+	box-sizing content-box
+	position relative
+	padding-left 20px
+	padding-right 20px
+	margin 0 auto 50px
+	@media tablet
+		max-width (360px*2 + 30px)
+		margin-bottom 30px
+	@media mobile
+		padding-left 15px
+		padding-right 15px
+	&__input
+		width 100%
+		min-height auto
+		padding 13px 20px 14px 63px
+		background #fff url(../images/icon-search.svg) 20px 50% no-repeat
+		border 1px solid #e3e3e3
+		font-size 18px
+		font-weight 300
+		border-radius 5px
+		&:focus
+			box-shadow none

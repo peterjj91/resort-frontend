@@ -1,5 +1,3 @@
-/tmp
-/node_modules
-/.publish
-/dest
-/tools/_templates
+node_modules/
+dist/
+dev/

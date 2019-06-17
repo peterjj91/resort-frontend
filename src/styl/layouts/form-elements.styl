@@ -1,0 +1,163 @@
+label
+	display block
+input,
+textarea,
+select
+	width 100%
+	min-height 50px
+	background-color alpha(#e6edef, .2)
+	border 1px solid gray-color
+	box-shadow none
+	padding-left 20px
+	padding-right 20px
+	vertical-align middle
+	flex 0 1 auto
+	transition background-color .15s, box-shadow .15s
+	.input-error &
+		border-color red-color
+		margin-bottom 0
+	&.focus,
+	&:focus
+		background-color #fff
+	&:hover
+		background-color #fff
+		box-shadow 0 0 10px rgba(163, 179, 183, 0.2)
+
+textarea
+	min-height 150px
+	resize none
+	padding-top 20px
+	padding-bottom 20px
+
+.label-text
+	font-size 12px
+	font-weight 700
+	line-height 22px
+
+.input-error
+	position relative
+	margin-bottom 20px
+	&__text
+		font-size 12px
+		font-style italic
+		line-height 20px
+		top calc(100% + 10px)
+		position absolute
+		display block
+
+.input-file
+	position relative
+	input
+		display none
+	&__fake-input
+		@extend input
+		overflow hidden
+		text-overflow ellipsis
+		padding-top 10px
+		padding-bottom 10px
+		.input-error &
+			color red-color
+		.focus &
+			color inherit
+			background-color #fff
+	&__loaded
+		@extend .input-error__text
+
+.input-password
+	position relative
+	display block
+	&__show
+		size 24px 16px
+		background url(../images/icon-eye-off.svg) 50% no-repeat
+		margin auto
+		position absolute
+		right 15px
+		top 0
+		bottom 0
+		z-index 1
+		display block
+		cursor pointer
+		&.show
+			background-image url(../images/icon-eye-on.svg)
+
+.select
+	position relative
+	cursor default
+	&__selected
+		@extend input
+		background #fff url('../images/icon-select-arrow.svg') right 15px top 50% no-repeat
+		padding-top 14px
+		padding-bottom 14px
+		@media mobile
+			display none
+		.input-error &
+			color red-color
+	&.open
+		.select-list
+			display block
+	select
+		@media more-mobile
+			display none
+		
+.select-list
+	width 100%
+	background-color #fff
+	border 1px solid gray-color
+	position absolute
+	top calc(100% + 5px)
+	left 0
+	z-index 1
+	display none
+	&__item
+		min-height 48px
+		padding 14px 20px
+		cursor pointer
+		transition box-shadow .15s
+		&:hover
+			box-shadow 0 0 10px rgba(0, 0, 0, 0.1)
+		& + &
+			border-top 1px solid gray-color
+
+
+.checkbox
+	cursor pointer
+	display inline-flex
+	input
+		display none
+		&:checked ~ {root()}__fake-input
+			background-image url('../images/icon-check.svg')
+			background-color #fff
+			background-repeat no-repeat
+			background-position 50%
+			border-color main-color
+				
+	&__fake-input
+		@extend input
+		size 32px
+		min-height 0
+		border 1px solid #dddcdc
+		padding 3px
+		margin-right 10px
+		margin-bottom 0
+		vertical-align middle
+		display inline-block
+		flex 0 0 auto
+		&:after
+			content ""
+			size 20px
+			display none
+	&__text
+		flex 0 1 auto
+
+.radiobutton
+	@extend .checkbox
+	input
+		&:checked ~ {root()}__fake-input
+			background-color main-color
+			
+			border-color main-color
+			
+	&__fake-input
+		background-clip content-box
+		border-radius 50%
+		padding 10px

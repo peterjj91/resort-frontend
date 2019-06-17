@@ -1,0 +1,177 @@
+/** 
+ * Плагин для stylus
+ *
+ * использование:
+ * .className
+ *   &__element
+ *     {выражение}
+ *
+ * {root()} — корневой элемент (.className)
+ * {up(N)} — подняться выше по дереву на N
+ * {end()} — повторяет последний элемент
+*/
+use('nesting-tree-traversal.js')
+
+/** 
+ * Основной шрифт сайта
+ * обязательно БЕЗ кавычек
+ * ставится для body (все остальные элементы наследуют font-family)
+ * Если шрифт кастомный, то подключать в ./fonts.styl
+ */
+fontFamily = 'Roboto', sans-serif
+
+/** Ширина сайта */
+pageWidth = 1340px
+
+/** Ширина бокового меню */
+sideWidth = 300px
+
+/** 
+ * Расстояние МЕЖДУ колонками
+ * т.е. у колонки справа и слева будет padding: colGap/2
+ */
+colGap = 40px
+
+/**
+ * Media queries
+ * обычные переменные со значением строки
+ * использование: @media mobile
+ */
+descSize = 1170px
+tabletSize = 960px
+mobileSize = 560px
+smallSize = 420px
+
+page = s("only screen and (max-width: %s)", (pageWidth + 2 * colGap))
+more-page = s("only screen and (min-width: %s)", (pageWidth + 2 * colGap + 1))
+desc = s("only screen and (max-width: %s)", descSize)
+more-desc = s("only screen and (min-width: %s)", descSize + 1)
+tablet = s("only screen and (max-width: %s)", tabletSize)
+more-tablet = s("only screen and (min-width: %s)", tabletSize + 1)
+mobile = s("only screen and (max-width: %s)", mobileSize)
+more-mobile = s("only screen and (min-width: %s)", mobileSize + 1)
+small = s("only screen and (max-width: %s)", smallSize)
+more-small = s("only screen and (min-width: %s)", smallSize + 1)
+
+/**
+ * Подчеркнутый текст полупрозрачным бордером
+ * если hover = true, не добавляыются некоторые стили, чтобы не скидывать их после применения миксина
+ */
+border-text(borderColor=main-color, hover=false)
+	color borderColor
+	text-decoration none
+	if !hover
+		border-bottom 1px solid alpha(borderColor, .3)
+		display inline
+	else
+		border-color borderColor
+
+/** Стандартный clearfix миксин */
+clearfix()
+	&:after
+		content ""
+		display table
+		clear both
+
+/**
+ * Миксин из nib
+ * использование: size 100px
+ */
+size(width, height=width)
+	width width
+	height height
+
+/** Обрезает длинную строку многоточием */
+ellipsis()
+	white-space nowrap
+	overflow hidden
+	text-overflow ellipsis
+
+/**
+ * Скидывает стили, наложенные миксином border-text()
+ * в основном используется у ссылок
+ */
+reset-link()
+	color inherit
+	text-decoration none
+	border-bottom none
+	padding-bottom 0
+
+/**
+ * кастомный placeholder
+ * принимает объект со стилями
+ * использование: placeholder({color: #000})
+ */
+placeholder(style)
+	&::-webkit-input-placeholder
+		{style}
+	&:-moz-placeholder
+		{style}
+	&::-moz-placeholder
+		{style}
+	&:-ms-input-placeholder
+		{style}
+
+/** создает крестик через псевдо-элементы */
+cross(color=#000, length=30px, thickness=3px)
+	size length
+	position relative
+	&:before
+	&:after
+		content ''
+		background color
+		height thickness
+		width length
+		margin 0 auto
+		position absolute
+		right 0
+		top 50%
+		display block
+	&:before
+		transform translateY(-50%) rotate(-45deg)
+	&:after
+		transform translateY(-50%) rotate(45deg)
+
+/** создает тереугольник */
+triangle(width = 10px, height = 10px, direction = 'bottom', color = #000)
+	size 0
+	background none
+	border-style solid
+	
+	directions = {
+		top: {
+			border-width: 0 (width * .5) height (width * .5),
+			border-color: transparent transparent color transparent
+		},
+		topRight: {
+			border-width: 0 width height 0,
+			border-color: transparent color transparent transparent
+		},
+		right: {
+			border-width: (height * .5) 0 (height *.5) width,
+			border-color: transparent transparent transparent color
+		},
+		bottomRight: {
+			border-width: 0 0 height width,
+			border-color: transparent transparent color transparent
+		},
+		bottom: {
+			border-width: height (width * .5) 0 (width * .5),
+			border-color: color transparent transparent transparent
+		},
+		bottomLeft: {
+			border-width: width 0 0 height,
+			border-color: transparent transparent transparent color
+		},
+		left: {
+			border-width: (height * .5) width (height * .5) 0,
+			border-color: transparent color transparent transparent
+		},
+		topLeft: {
+			border-width: height width 0 0,
+			border-color: color transparent transparent transparent
+		}
+	}
+	
+	styles = directions[direction]
+	{styles}
