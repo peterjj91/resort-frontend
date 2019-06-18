@@ -1,0 +1,292 @@
+extends extends/_layout
+
+block content
+  .main-title
+    .h1 Личный кабинет
+
+  .main__wrapper
+    .h2 ООО "Вейвикенд"
+    .tabs.js-tabs.tabs--vertical.tabs--cabinet
+      .tabs__toggles
+        .tabs__toggle.js-tabs-toggle Личные данные
+        .tabs__toggle.js-tabs-toggle В избранных
+      .tabs__tab.js-tabs-tab
+        .cabinet__personal__description
+          p
+            | Компания зарегистрирована в онлайн-каталоге 14 ноября 2018, стенд 15В601, расположенный в зале №3. Если хотите стереть информацию о компании с сайта, оставьте 
+            a(href='#') запрос на удаление данных
+            | .
+        
+        .cabinet__personal__img
+          img(src="images/brand-img1.png", alt="")
+        .cabinet__personal__block
+          .h3 Основная информация
+          form(action="")
+            .cabinet__form
+              .cabinet__form__block
+                label.label
+                  span.label-text Страна
+                  input(type="text" value="Россия")
+              .cabinet__form__block
+                label.label
+                  span.label-text Регион
+                  input(type="text" value="Москва")
+              .cabinet__form__block
+                label.label
+                  span.label-text Город
+                  input(type="text" value="Москва")
+              .cabinet__form__block
+                label.label
+                  span.label-text Адрес
+                  input(type="text" value="ул. Орджоникидзе, д. 11, стр. 10")
+
+        .cabinet__personal__block
+          .h3 Контакты
+          form(action="")
+            .cabinet__form
+              .cabinet__form__block
+                label.label.js-inputmask-phone
+                  span.label-text Телефон
+                  input(type="text" value="+74954090179")
+              .cabinet__form__block
+                label.label
+                  span.label-text E-mail
+                  input(type="text" value="valera@wakeweekend.ru")
+              .cabinet__form__block
+                label.label
+                  span.label-text Сайт
+                  input(type="text" value="wakeweekend.ru")
+              .cabinet__form__block
+                label.label
+                  span.label-text ВКонтакте
+                  input(type="text" value="https://vk.com/wakeweekend")
+              .cabinet__form__block
+                label.label
+                  span.label-text Instagram
+                  input(type="text" value="https://instagram.com/wakeweekend")
+
+        .cabinet__personal__block
+          .h3 Контакты
+          form(action="")
+            .cabinet__form
+              .cabinet__form__block
+                label.label
+                  span.label-text 
+                    | Наименование для фризовой панели
+                    span.tooltip
+                      span.tooltip__content.js-tooltip Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  input(type="text" value="Спорт")
+              .cabinet__form__block
+                label.label
+                  span.label-text Категория
+                  input(type="text" value="Вейквикенд — лидер в своей области!")
+              .cabinet__form__block
+                label.label
+                  span.label-text Сфера деятельности
+                  input(type="text" value="Перевозчики")
+              .cabinet__form__block.cabinet__form__block--full
+                label.label
+                  span.label-text Описание деятельности
+                  textarea Деятельность зрелищно-развлекательная прочая, не включенная в другие группировки видов деятельности.
+        
+        .cabinet__personal__block
+          .h3 Мероприятия
+          table.table-separated.table--exhibitor
+            thead
+              tr
+                th Описание
+                th Время
+            tbody
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Начало работы выставки
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 10:00
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Презентация работы ОАУ «ОЦСТ»
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 10:00—12:00
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Презентация работы ОАУ «ОЦСТ»
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 12:00—14:00 
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Работа на площадке представителей ПК «Центр Туризма Города Ельца»
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 12:00—14:00 
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Работа на площадке представителей г. Чаплыгин
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 16:00—17:00
+              tr
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p Презентация событийного календаря Липецкой области 2019
+                td
+                  span.table-separated__caption Время
+                  br.hide-moretablet
+                  p 17:00—18:00
+
+        .cabinet__personal__block.cabinet__personal__block--photos
+          .h3 Фото
+          .photos
+            .photos__block
+              .photos__img
+                .photos__img__wrapper
+                  img(src="images/photo-img5.png", alt="")
+            .photos__block
+              .photos__img
+                .photos__img__wrapper
+                  img(src="images/photo-img2.png", alt="")
+            .photos__block
+              .photos__img
+                .photos__img__wrapper
+                  img(src="images/photo-img3.png", alt="")
+            .photos__block
+              .photos__img
+                .photos__img__wrapper
+                  img(src="images/photo-img4.png", alt="")
+            .photos__block
+              .photos__img
+                .photos__img__wrapper
+                  img(src="images/photo-img5.png", alt="")
+
+        .cabinet__personal__block
+          .h3 Видео
+
+          .video
+            iframe(width="100%" height="100%" src="https://www.youtube.com/embed/_kFdCqeZJhM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+        .cabinet__personal__block
+          .h3 Презентация
+          table.table-separated.table--exhibitor
+            thead
+              tr
+                th Название
+                th Описание
+            tbody
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+
+        .cabinet__personal__block
+          .h3 Документы
+          table.table-separated.table--exhibitor
+            thead
+              tr
+                th Название
+                th Описание
+            tbody
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+
+        .cabinet__personal__block
+          .h3 Пресс-релиз
+          table.table-separated.table--exhibitor
+            thead
+              tr
+                th Название
+                th Описание
+            tbody
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+              tr
+                td
+                  span.table-separated__caption Название
+                  br.hide-moretablet
+                  a(href="#") Начало работы выставки
+                td
+                  span.table-separated__caption Описание
+                  br.hide-moretablet
+                  p PDF
+        
+        .cabinet__personal__block
+          .h3 Контактное лицо
+          form(action="")
+            .cabinet__form
+              .cabinet__form__block
+                label.label
+                  span.label-text Фамилия
+                  input(type="text" value="Головин")
+              .cabinet__form__block
+                label.label
+                  span.label-text Имя
+                  input(type="text" value="Александр")
+              .cabinet__form__block
+                label.label
+                  span.label-text Должность
+                  +select('Выберите вариант', ['Первый вариант', 'Второй вариант', 'Третий вариант'])
+              .cabinet__form__block
+                label.label.js-inputmask-phone
+                  span.label-text Телефон
+                  input(type="text" value="+74954090179")
+              .cabinet__form__block
+                label.label
+                  span.label-text E-mail
+                  input(type="text" value="info@future-group.ru")
+
+        a(href="#").button Редактировать
+      .tabs__tab.js-tabs-tab

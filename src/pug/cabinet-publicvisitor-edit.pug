@@ -1,0 +1,254 @@
+extends extends/_layout
+
+block content
+  .main-title
+    .h1 Личный кабинет
+
+  .main__wrapper
+    .h2 Игорь Маркелов
+    .tabs.js-tabs.tabs--vertical.tabs--cabinet
+      .tabs__toggles
+        .tabs__toggle.js-tabs-toggle Билет
+        .tabs__toggle.js-tabs-toggle Избранное
+        .tabs__toggle.js-tabs-toggle.active Личные данные
+      .tabs__tab.js-tabs-tab
+        .programm__content.programm__content--cabinet
+          p Для входа на выставку, пожалуйста, распечатайте ваш бейдж. Сложите его по линиям сгиба или вырежьте так, чтобы был виден штрих-код. На выставке вы сможете вложить бейдж в пластиковый карман, предоставленный организатором. Наличие бейджа на электронном носителе не гарантирует корректное считывание штрих-кода.
+        .programm__schedule.programm__schedule--cabinet
+          table.table-separated.table--cabinet
+            thead
+              tr
+                th Выставка
+                th Дата
+            tbody
+              tr
+                td
+                  span.table-separated__caption Выставка
+                  br.hide-moretablet
+                  p 24-й международный форум-выставка по туризму
+                  p.table__text--light Москва, ЦВК «Экспоцентр», Павильон №2
+                td
+                  span.table-separated__caption Дата
+                  br.hide-moretablet
+                  p С 11 по 13 сентября
+        a(href="#").button Скачать билет
+        a(href="#").button.button--outline Отправить по e-mail
+      .tabs__tab.js-tabs-tab
+        .tabs.js-tabs
+          .tabs__toggles
+            .tabs__toggle.js-tabs-toggle Участники
+            .tabs__toggle.js-tabs-toggle Мероприятия
+          .tabs__tab.js-tabs-tab
+            table.table-separated.table--place
+              thead
+                tr
+                  th Организация
+                  th Страна
+                  th Стенд
+              tbody
+                tr
+                  td
+                    span.table-separated__caption Организация
+                    br.hide-moretablet
+                    a(href="#").cabinet__organization
+                      img(src="images/organiztion-img1.png", alt="")
+                      span.cabinet__organization__text 100 Дорог, туристический портал
+                  td
+                    span.table-separated__caption Страна
+                    br.hide-moretablet
+                    | Россия
+                  td
+                    span.table-separated__caption Стенд
+                    br.hide-moretablet
+                    | 2B1404
+                tr
+                  td
+                    span.table-separated__caption Организация
+                    br.hide-moretablet
+                    a(href="#").cabinet__organization
+                      img(src="images/organiztion-img2.png", alt="")
+                      .span.cabinet__organization__text 4 Сезона, Прованс-отель
+                  td
+                    span.table-separated__caption Страна
+                    br.hide-moretablet
+                    | Россия
+                  td
+                    span.table-separated__caption Стенд
+                    br.hide-moretablet
+                    | 2B1404
+                tr
+                  td
+                    span.table-separated__caption Организация
+                    br.hide-moretablet
+                    a(href="#").cabinet__organization
+                      img(src="images/organiztion-img3.png", alt="")
+                      span.cabinet__organization__text 4banket
+                  td
+                    span.table-separated__caption Страна
+                    br.hide-moretablet
+                    p Россия
+                  td
+                    span.table-separated__caption Стенд
+                    br.hide-moretablet
+                    | Заочно
+                tr
+                  td
+                    span.table-separated__caption Организация
+                    br.hide-moretablet
+                    a(href="#").cabinet__organization
+                      img(src="images/organiztion-img4.png", alt="")
+                      span.cabinet__organization__text 500Rai Resorts and Tours (Khao Sok...
+                  td
+                    span.table-separated__caption Страна
+                    br.hide-moretablet
+                    | Россия
+                  td
+                    span.table-separated__caption Стенд
+                    br.hide-moretablet
+                    | -
+                tr
+                  td
+                    span.table-separated__caption Организация
+                    br.hide-moretablet
+                    a(href="#").cabinet__organization
+                      img(src="images/organiztion-img5.png", alt="")
+                      span.cabinet__organization__text 5th Element LTD
+                  td
+                    span.table-separated__caption Страна
+                    br.hide-moretablet
+                    | Россия
+                  td
+                    span.table-separated__caption Стенд
+                    br.hide-moretablet
+                    | -
+          .tabs__tab.js-tabs-tab
+            table.table-separated.table--activity
+              thead
+                tr
+                  th 10:00
+                  th Мероприятие
+              tbody
+                tr
+                  td
+                    span.table-separated__caption 10:00
+                    br.hide-moretablet
+                    p Зал №1
+                  td
+                    span.table-separated__caption Мероприятия
+                    br.hide-moretablet
+                    p
+                      a(href="#") Мероприятия на стенде Липецкой области
+                    p.table__text--light Начало работы выставки
+                    ul.favourite-icons.favourite-icons--fly
+                      li
+                        span.tooltip.tooltip--extended
+                          .icon.icon--love.active.icon--full
+                          span.tooltip__content.js-tooltip Добавить в избранное
+            table.table-separated.table--programm.table--activity
+              thead
+                tr
+                  th 10:00-12:00
+                  th Мероприятие
+              tbody
+                tr
+                  td
+                    span.table-separated__caption 10:00-12:00
+                    br.hide-moretablet
+                    p Зал №1
+                  td
+                    span.table-separated__caption Мероприятия
+                    br.hide-moretablet
+                    p
+                      a(href="#") Мероприятия на стенде Липецкой области
+                    p.table__text--light Начало работы выставки
+                    ul.favourite-icons.favourite-icons--fly
+                      li
+                        span.tooltip.tooltip--extended
+                          .icon.icon--love.active.icon--full
+                          span.tooltip__content.js-tooltip Добавить в избранное
+            table.table-separated.table--programm.table--activity
+              thead
+                tr
+                  th 12:00-14:00
+                  th Мероприятие
+              tbody
+                tr
+                  td
+                    span.table-separated__caption 12:00-14:00
+                    br.hide-moretablet
+                    p Зал №1
+                  td
+                    span.table-separated__caption Мероприятия
+                    br.hide-moretablet
+                    p
+                      a(href="#") Мероприятия на стенде Липецкой области
+                    p.table__text--light Начало работы выставки
+                    ul.favourite-icons.favourite-icons--fly
+                      li
+                        span.tooltip.tooltip--extended
+                          .icon.icon--love.active.icon--full
+                          span.tooltip__content.js-tooltip Добавить в избранное
+            .button__group
+              a(href="#").button Скачать программу
+              a(href="#").button.button--outline Отправить по e-mail
+      .tabs__tab.js-tabs-tab
+        form(action="")
+          .cabinet__form
+            .cabinet__form__block
+              label.label
+                span.label-text Имя
+                input(type="text" value="Игорь")
+            .cabinet__form__block
+              label.label
+                span.label-text Фамилия
+                input(type="text" value="Маркелов")
+            .cabinet__form__block
+              label.label
+                span.label-text E-mail
+                input(type="text" value="info@future-group.ru")
+            .cabinet__form__block
+              label.label.js-inputmask-phone
+                span.label-text Мобильный телефон
+                input(type="text" value="+74954090179")
+            .cabinet__form__block
+              label.label
+                span.label-text Страна
+                +select('Выберите вариант', ['Россия', 'Второй вариант', 'Третий вариант'])
+            .cabinet__form__block
+              label.label
+                span.label-text Регион
+                +select('Выберите вариант', ['Москва', 'Второй вариант', 'Третий вариант'])
+            .cabinet__form__block
+              label.label
+                span.label-text Город
+                +select('Выберите вариант', ['Москва', 'Второй вариант', 'Третий вариант'])
+            .cabinet__form__block
+              label.label
+                span.label-text Что интересует на выставке?
+                +select('Не выбрано', ['10-15', 'Второй вариант', 'Третий вариант'])
+            .cabinet__form__block
+              label.label
+                span.label-text Посещали форум "ОТДЫХ-2018"
+                +select('Не выбрано', ['Да', 'Нет'])
+            .cabinet__form__block
+              label.label
+                span.label-text Какие направления интересны?
+                +select('Не выбрано', ['10-15', 'Второй вариант', 'Третий вариант'])
+            .cabinet__form__block
+              label.label
+                span.label-text Откуда узнали о выставке?
+                +select('Не выбрано', ['Да', 'Нет'])
+            .cabinet__form__block
+              label.label
+                  span.label-text Новый пароль
+                  span.input-password.js-input-password
+                    input(type="password", value="")
+                    span.input-password__show.js-input-password-toggle
+            .cabinet__form__block
+              label.label
+                  span.label-text Повторить пароль
+                  span.input-password.js-input-password
+                    input(type="password", value="")
+                    span.input-password__show.js-input-password-toggle
+          button.button Сохранить
+          button.button.button--outline Отменить изменения

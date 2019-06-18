@@ -1,8 +1,11 @@
 table,
 .table
 	max-width 100%
+	width 100%
 	border 1px solid gray-color
 	table-layout fixed
+	border-bottom 1px solid transparent
+	margin-bottom 30px
 	thead,
 	&__thead
 		font-weight 700
@@ -18,6 +21,7 @@ table,
 		border-left 1px solid transparent
 		border-right 1px solid transparent
 		border-bottom 1px solid #F0F0F0
+		position relative
 	.favourite-icons
 		li
 			display none
@@ -33,6 +37,9 @@ table,
 				background-image linear-gradient(to right, rgba(240, 240, 240, 0) 0%, #f0f0f0 9%, #f0f0f0 100%)
 				li
 					display inline-block
+		&:last-child
+			td
+				border-bottom 1px solid transparent
 	tbody,
 	&__tbody
 		th, td,
@@ -40,9 +47,10 @@ table,
 		&__th
 			padding-top 23px
 			padding-bottom 12px
+	p
+		margin-bottom 7px
 	&--programm
 		td
-			position relative
 			&:first-child
 				width 29%
 				padding-right 20px
@@ -52,7 +60,43 @@ table,
 				padding-right 60px
 		p
 			margin-bottom 7px
-	
+	&--cabinet
+		td, th
+			&:last-child
+				width 270px
+				text-align right
+		p
+			margin-bottom: 7px;
+	&--place
+		thead
+			td, th
+				&:first-child
+					padding-left: 110px
+		tbody
+			td
+				vertical-align middle
+				&:first-child
+					padding-left: 0px
+					padding-top: 16px
+					padding-bottom: 16px
+					padding-right: 16px
+		td, th
+			&:last-child
+				width 130px
+				text-align right
+			&:nth-child(2)
+				width: 141px
+	&--activity
+		margin-bottom 0
+		td, th
+			&:first-child
+				width: 154px
+	&--exhibitor
+		td,th
+			&:last-child
+				width 180px
+				text-align right
+
 .table
 	border-collapse collapse
 	display table

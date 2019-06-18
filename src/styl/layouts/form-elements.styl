@@ -6,7 +6,7 @@ select
 	width 100%
 	min-height 50px
 	background-color alpha(#e6edef, .2)
-	border 1px solid gray-color
+	border 1px solid #F0F0F0
 	box-shadow none
 	padding-left 20px
 	padding-right 20px
@@ -24,15 +24,20 @@ select
 		box-shadow 0 0 10px rgba(163, 179, 183, 0.2)
 
 textarea
-	min-height 150px
+	min-height 200px
 	resize none
 	padding-top 20px
 	padding-bottom 20px
 
 .label-text
-	font-size 12px
+	font-size 15px
 	font-weight 700
 	line-height 22px
+	display inline-block
+	margin-bottom 9px
+	.tooltip
+		margin-left: 10px
+		vertical-align: sub
 
 .input-error
 	position relative
@@ -66,6 +71,16 @@ textarea
 .input-password
 	position relative
 	display block
+	input
+		&.focus
+			font-size 39px
+			padding-left 12px
+			letter-spacing 3px
+			line-height normal
+		&.showed
+			padding-left 20px
+			font-size 16px
+			letter-spacing normal
 	&__show
 		size 24px 16px
 		background url(../images/icon-eye-off.svg) 50% no-repeat
